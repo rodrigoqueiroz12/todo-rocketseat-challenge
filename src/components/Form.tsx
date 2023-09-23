@@ -17,7 +17,7 @@ export const Form = ({ ...props }: FormProps) => {
     e.preventDefault()
 
     if (inputTask.trim().length === 0) return
-    
+
     props.appendNewTask(inputTask)
     setTask("")
   }

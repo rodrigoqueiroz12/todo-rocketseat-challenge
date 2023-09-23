@@ -13,3 +13,10 @@
   width: min(100%, 768px);
   padding-inline: 1rem;
 }
+
+.modalActions {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8rem;
+}
