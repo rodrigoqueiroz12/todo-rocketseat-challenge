@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion"
 import styles from "./TasksList.module.css"
 import { Task } from "./Task"
 import { TaskInterface } from "../App"
@@ -34,16 +35,18 @@ export const TasksList = ({ ...props }: TasksListProps) => {
 
       {isTasksNotEmpty ? (
         <ul className={styles.tasksList}>
-          {props.tasks.map(task => {
-            return (
-              <Task
-                key={task.id}
-                task={task}
-                deleteTask={props.deleteTask}
-                updateIsfinishedTask={props.updateIsfinishedTask}
-              />
-            )
-          })}
+          <AnimatePresence>
+            {props.tasks.map(task => {
+              return (
+                <Task
+                  key={task.id}
+                  task={task}
+                  deleteTask={props.deleteTask}
+                  updateIsfinishedTask={props.updateIsfinishedTask}
+                />
+              )
+            })}
+          </AnimatePresence>
         </ul>
       ) : (
         <div className={styles.withoutTasksFeedback}>

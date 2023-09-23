@@ -1,6 +1,7 @@
 import { Check, Trash } from "@phosphor-icons/react"
 import styles from "./Task.module.css"
 import { TaskInterface } from "../App"
+import { motion } from "framer-motion"
 
 interface TaskProps {
   task: TaskInterface
@@ -22,7 +23,14 @@ export const Task = ({ ...props }: TaskProps) => {
   }
 
   return (
-    <li className={styles.task}>
+    <motion.li
+      layout
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className={styles.task}
+    >
       <div className={styles.taskStatus}>
         <label htmlFor={`finishedTaskInput-${props.task.id}`}>
           <span>
@@ -42,6 +50,6 @@ export const Task = ({ ...props }: TaskProps) => {
       <button type="button" onClick={handleDeleteTask}>
         <Trash size={24} />
       </button>
-    </li>
+    </motion.li>
   )
 }
