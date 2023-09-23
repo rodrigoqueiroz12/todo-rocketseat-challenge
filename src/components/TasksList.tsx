@@ -1,4 +1,4 @@
-import { AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import styles from "./TasksList.module.css"
 import { Task } from "./Task"
 import { TaskInterface } from "../App"
@@ -32,32 +32,45 @@ export const TasksList = ({ ...props }: TasksListProps) => {
           </span>
         </p>
       </div>
-
-      {isTasksNotEmpty ? (
-        <ul className={styles.tasksList}>
-          <AnimatePresence>
-            {props.tasks.map(task => {
-              return (
-                <Task
-                  key={task.id}
-                  task={task}
-                  deleteTask={props.deleteTask}
-                  updateIsfinishedTask={props.updateIsfinishedTask}
-                />
-              )
-            })}
-          </AnimatePresence>
-        </ul>
-      ) : (
-        <div className={styles.withoutTasksFeedback}>
-          <img src="/clipboard.png" />
-          <p>
-            <b>Você ainda não tem tarefas cadastradas</b>
-            <br />
-            Crie tarefas e organize seus itens a fazer
-          </p>
-        </div>
-      )}
+      <AnimatePresence>
+        {isTasksNotEmpty ? (
+          <motion.ul
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className={styles.tasksList}
+          >
+            <AnimatePresence>
+              {props.tasks.map(task => {
+                return (
+                  <Task
+                    key={task.id}
+                    task={task}
+                    deleteTask={props.deleteTask}
+                    updateIsfinishedTask={props.updateIsfinishedTask}
+                  />
+                )
+              })}
+            </AnimatePresence>
+          </motion.ul>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className={styles.withoutTasksFeedback}
+          >
+            <img src="/clipboard.png" />
+            <p>
+              <b>Você ainda não tem tarefas cadastradas</b>
+              <br />
+              Crie tarefas e organize seus itens a fazer
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
