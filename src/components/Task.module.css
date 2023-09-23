@@ -1,0 +1,88 @@
+.task {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background-color: var(--gray-500);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid var(--gray-400);
+}
+
+.taskStatus > label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 17.45px;
+  width: 17.45px;
+  border: 2px solid var(--blue-regular);
+  border-radius: 100%;
+  cursor: pointer;
+  transition:
+    border 150ms,
+    background-color 150ms;
+  line-height: 0;
+  color: var(--gray-100);
+}
+
+.taskStatus > label > span {
+  transition: opacity 500ms;
+}
+
+.taskStatus > label:has(+ input:hover) {
+  border-color: var(--blue-regular);
+  background-color: var(--blue-dark);
+}
+
+.taskStatus > label:has(+ input:checked) {
+  border-color: var(--purple-dark);
+  background-color: var(--purple-dark);
+}
+
+.taskStatus > label:has(+ input:checked):hover {
+  border-color: var(--purple-regular);
+  background-color: var(--purple-regular);
+}
+
+.taskStatus > label:not(:has(+ input:checked)) > span {
+  opacity: 0;
+}
+
+.taskStatus > input {
+  display: none;
+}
+
+.task > textarea {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  overflow: hidden;
+  resize: none;
+  color: var(--gray-100);
+  font-size: var(--text-md);
+  line-height: 1.4;
+  transition: color 250ms;
+}
+
+.task .taskStatus:has(> input:checked) + textarea {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+.task > button {
+  padding: 5px;
+  border-radius: 4px;
+  line-height: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--gray-300);
+  transition:
+    color 250ms,
+    background-color 250ms;
+}
+
+.task > button:hover {
+  color: var(--danger);
+  background-color: var(--gray-400);
+}

@@ -1,0 +1,9 @@
+{
+  "semi": false,
+  "arrowParens": "avoid",
+  "useTabs": false,
+  "endOfLine": "crlf",
+  "tabWidth": 2,
+  "singleQuote": false,
+  "printWidth": 80
+}
