@@ -16,6 +16,8 @@ export const Form = ({ ...props }: FormProps) => {
   function handleAppendNewTask(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
+    if (inputTask.trim().length === 0) return
+    
     props.appendNewTask(inputTask)
     setTask("")
   }
