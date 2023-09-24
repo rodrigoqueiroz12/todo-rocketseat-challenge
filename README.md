@@ -4,6 +4,8 @@ Website criado como caso de estudos do Ignite da Rocketseat usando React, Typesc
 
 Você pode visitar o projeto em https://todo-rocketseat-challenge.vercel.app/
 
+![Texto Alternativo](./project.png)
+
 ## O que foi aprendido
 
 1. Typescript
