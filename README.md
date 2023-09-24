@@ -2,6 +2,11 @@
 
 Website criado como caso de estudos do Ignite da Rocketseat usando React, Typescript e Vite.
 
+## O que foi aprendido
+
+1. Typescript
+2. Animações com Framer Motion
+
 ## Instalação
 
 1. Clone o repositório: `git clone https://github.com/rodrigoqueiroz12/todo-rocketseat-challenge.git`
