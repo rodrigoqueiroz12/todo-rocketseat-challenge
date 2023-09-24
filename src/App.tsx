@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import { useState } from "react"
 import styles from "./App.module.css"
 import { Form } from "./components/Form"
@@ -19,7 +20,7 @@ export const App = () => {
 
   function appendNewTask(task: string) {
     const newTask: TaskInterface = {
-      id: Date.now(),
+      id: uuidv4(),
       content: task,
       isFinished: false,
     }
