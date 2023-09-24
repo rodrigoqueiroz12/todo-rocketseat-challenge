@@ -8,7 +8,7 @@ import { Modal } from "./components/Modal"
 import { Button } from "./components/Button"
 
 export interface TaskInterface {
-  id: number
+  id: string
   content: string
   isFinished: boolean
 }
