@@ -24,8 +24,3 @@ Esse projeto foi criado com o intuito de praticar os conhecimentos adquiridos no
 ## Contato
 
 Se você quiser entrar em contato, você pode me encontrar em [rodrigo.queiroz0629@gmail.com].
-
-## Agradecimentos
-
-Aqui você pode reconhecer e agradecer a qualquer pessoa ou recurso que tenha sido útil para o seu projeto.
-
